@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'trade.apps.TradeConfig',
     'user_operaion.apps.UserOperaionConfig',
+    'blog.apps.BlogConfig',
     'DjangoUeditor',
     'crispy_forms',
     'django_filters',
@@ -101,7 +102,7 @@ DATABASES = {
         'NAME': "restApi" ,
         'USER': 'root' ,
         'PASSWORD': "123456" ,
-        'HOST': "",
+        'HOST': "120.79.37.206",
          "OPTIONS":{"init_command":"SET default_storage_engine=INNODB;"}
 
     }
@@ -170,6 +171,12 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     ),
+    'DEFAULT_PARSER_CLASSES': (
+        'rest_framework.parsers.JSONParser',
+        'rest_framework.parsers.FormParser',
+        'rest_framework.parsers.MultiPartParser',
+        'rest_framework.parsers.FileUploadParser',
+    )
 }
 
 

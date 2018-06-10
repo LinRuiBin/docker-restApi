@@ -24,14 +24,19 @@ from rest_framework.routers import DefaultRouter
 from goods.views import GoodsListViewSet,CategoryViewSet
 from rest_framework_jwt.views import obtain_jwt_token
 from users.views import SmsCodeViewset,UserViewset
+from blog.views import ArticlesListViewSet, AllLabelsViewSet, HomeArticlesListViewSet,BlogImageUploadSet,TaskUploadSet
 router = DefaultRouter()
 # 商品
 router.register(r'goods',GoodsListViewSet)
+router.register(r'homeArticles',HomeArticlesListViewSet)
 # 商品分类
 router.register(r'categorys',CategoryViewSet)
 router.register(r'code', SmsCodeViewset, base_name="code")
 router.register(r'users', UserViewset, base_name="users")
-
+router.register(r'articles',ArticlesListViewSet)
+router.register(r'labels',AllLabelsViewSet)
+router.register(r'blogimage',BlogImageUploadSet)
+router.register(r'imgtask',TaskUploadSet)
 # good_list = GoodsListViewSet.as_view({
 #      'get':'list',
 # })
